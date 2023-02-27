@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: 'Sen', sans-serif;
+  font-family: 'Josefin Sans', sans-serif; */
+}
+
+:root {
+  --light-coffee-color: #f8f4ee;
+  --light-brown-color: #bca79c;
+  --brown-color: #5a3b36;
+  --white-color: #ffffff;
+}
+
+.main {
+  background-color: var(--light-coffee-color);
+  padding-top: 4rem;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--white-color);
+    padding: 0 8rem;
+}
+.tabs > input[type="radio"] {
+    display: none;
+}
+.tabs .main__tab {
+    padding: 25px 35px;
+    background: var(--light-coffee-color);
+    font-weight: 700;
+    color: var(--light-brown-color);
+    font-family: 'Sen', sans-serif;
+    font-size: 18px;
+    position: relative;
+    top: -4.45rem;
+    text-decoration: underline;
+}
+
+.tabs > .tab  {
+    width: 100%;
+    padding: 0 20px  ;
+    order: 1;
+    display: none;
+}
+
+.tabs > input[type='radio']:checked + .main__tab + .tab{
+    display: block;
+}
+
+.tabs > input[type="radio"]:checked + .main__tab {
+    background: #fff;
+    color: var(--brown-color);
+    text-decoration: none;
+}  
+
+.video__types {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--white-color);
+}
+
+.video__types > input[type="radio"] {
+    display: none;
+}
+
+.video__types .video__types__tab {
+    padding: 25px 35px;
+    font-weight: 700;
+    color: var(--light-brown-color);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    position: relative;
+    top: -4.45rem;
+}
+
+.video__types > .tab  {
+    width: 100%;
+    padding: 0 20px  ;
+    order: 1;
+    display: none;
+}
+
+.video__types > input[type='radio']:checked + .video__types__tab + .tab   {
+    display: block;
+}
+
+.video__types > input[type="radio"]:checked + .video__types__tab {
+    background: #fff;
+    color: var(--brown-color);
+    text-decoration: underline;
+}  
+
+.videos__grid {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 20px;
+    
+}
+
+
+
