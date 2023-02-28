@@ -50,6 +50,7 @@
     font-size: 15px;
     color: var(--light-brown-color);
     margin: 0 1rem;
+    text-transform: uppercase;
 }
 
 .videoTypesTab > button.active {
