@@ -49,8 +49,6 @@ const updateVideosPerPage = () => {
     } else {
       videosPerPage = 15;
     }
-  
-    console.log(`Videos per page: ${videosPerPage}`);
   };
 
   updateVideosPerPage();
