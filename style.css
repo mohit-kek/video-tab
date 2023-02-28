@@ -15,6 +15,12 @@
     background-color: var(--light-coffee-color);
 }
 
+.tab{
+    padding: 0 11.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
 .tab > button {
     background-color: var(--light-coffee-color);
     color: var(--light-brown-color);
@@ -33,9 +39,6 @@
     text-decoration: none;
 }
 
-.tab{
-    padding: 0 11.5rem;
-}
 
 .tabcontent {
     display: none;
@@ -64,9 +67,10 @@
 }
 
 .videosGrid {
-    display: flex;
-    flex-wrap: wrap;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .row {
@@ -76,14 +80,13 @@
 }
 
 .col {
-    flex: 1 1 18%;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    margin: 14px 20px;
 }
 
 .video {
     height:300px;
     width:180px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .btn {
