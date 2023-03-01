@@ -2,6 +2,21 @@
 document.getElementById("tab1").style.display = "block";
 document.getElementById("typeTab1").style.display = "block";
 
+// Video source array
+const videoSrc = [
+    "./assets/Video1.mp4",
+    "./assets/Video2.mp4",
+    "./assets/Video3.mp4",
+    "./assets/Video4.mp4",
+    "./assets/Video5.mp4",
+    "./assets/Video6.mp4",
+    "./assets/Video7.mp4",
+    "./assets/Video8.mp4",
+    "./assets/Video9.mp4",
+    "./assets/Video10.mp4",
+]
+
+
 // Function to open the tab
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
@@ -42,39 +57,41 @@ function openSubTab(evt, subtabName) {
 //for loading videos
 
 let currentPage = 1;
-let videosPerPage = 0;
+var videosPerLoad = 0;
 const updateVideosPerPage = () => {
     if (window.innerWidth < 600) {
-      videosPerPage = 5;
+        videosPerLoad = 5;
     } else {
-      videosPerPage = 15;
+        videosPerLoad = 10;
     }
-  };
+};
 
-  updateVideosPerPage();
-  
-  // Update on resize
-  window.addEventListener('resize', updateVideosPerPage);
+updateVideosPerPage();
+
+// Update on resize
+window.addEventListener('resize', updateVideosPerPage);
 
 const videosGrid = document.querySelector('.videosGrid');
 const loadMore = document.querySelector('.loadMore');
 
 // load videos for the current page
 function loadVideos() {
-    const startIndex = currentPage - 1 * videosPerPage;
-    const endIndex = startIndex + videosPerPage;
-
+    const startIndex = videosPerLoad - currentPage;
+    const endIndex = startIndex + videosPerLoad;
+    let videoIndex = 0;
     for (let i = startIndex; i < endIndex; i++) {
         const videoCol = document.createElement('div');
         videoCol.className = 'col';
         videoCol.innerHTML = `
         <div>
         <video class="video"  controls muted>
-          <source src="./assets/sample.mp4" type="video/mp4" />
+          <source src=${videoSrc[videoIndex]} type="video/mp4" />
         </video>
       </div>
         `;
         videosGrid.appendChild(videoCol);
+        videoIndex++;
+        
     }
 }
 
@@ -87,7 +104,7 @@ loadMore.addEventListener('click', () => {
     loadVideos();
 
     // Hide load more button if all videos have been loaded
-    if (currentPage * videosPerPage >= 45) {
+    if (currentPage * videosPerLoad >= 40) {
         loadMore.style.display = 'none';
     }
 });
