@@ -83,15 +83,17 @@ function loadVideos() {
         const videoCol = document.createElement('div');
         videoCol.className = 'col';
         videoCol.innerHTML = `
-        <div>
-        <video class="video"  controls muted>
+        <div class="video">
+        <video height="100%"
+    width="100%"  controls muted>
           <source src=${videoSrc[videoIndex]} type="video/mp4" />
         </video>
+        <div class="overlay"></div>
       </div>
         `;
         videosGrid.appendChild(videoCol);
         videoIndex++;
-        
+
     }
 }
 

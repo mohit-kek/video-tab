@@ -43,7 +43,7 @@
 .tabcontent {
     display: none;
     background-color: var(--white-color);
-    padding: 1.56rem 11.5rem;
+    padding: 1.56rem 11%;
 }
 
 .videoTypesTab > button{
@@ -67,7 +67,7 @@
 }
 
 .videosGrid {
-    max-width: 1100px;
+   
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -80,18 +80,19 @@
 }
 
 .col {
-    margin: 14px 20px;
+    margin: 14px 15px;
 }
 
 .video {
     height:300px;
-    width:180px;
+    width:200px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .btn {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    gap: 28rem;
 }
 .loadMore {
     background-color: var(--white-color);
@@ -103,11 +104,25 @@
     font-weight: 700;
 }
 
+.seeReviews {
+    background-color: var(--white-color);
+    color: var(--light-brown-color);
+    border: none;
+    text-decoration: underline;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
 /* Medium devices */
 
 @media screen and (max-width: 1024px) {
     .tab{
         padding: 0 2rem;
+    }
+
+    .btn{
+        justify-content: space-evenly;
     }
     .tabcontent {
         padding: 1.56rem 2rem;
@@ -128,5 +143,10 @@
     .video {
         height:350px;
         width:250px;
+    }
+
+    .btn{
+        gap: 1rem;
+        flex-wrap: wrap;
     }
   }
