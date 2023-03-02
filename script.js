@@ -85,7 +85,7 @@ function loadVideos() {
         videoCol.innerHTML = `
         <div class="video">
         <video height="100%"
-    width="100%"  controls muted>
+    width="100%" controls muted>
           <source src=${videoSrc[videoIndex]} type="video/mp4" />
         </video>
         <div class="overlay"></div>
