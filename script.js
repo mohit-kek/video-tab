@@ -74,7 +74,7 @@ updateVideosPerPage();
 window.addEventListener('resize', updateVideosPerPage);
 
 const videosGrid = document.querySelector('.videosGrid');
-const loadMore = document.querySelector('.loadMore');
+const loadMore = document.querySelectorAll('.loadMore');
 
 // load videos for the current page
 function loadVideos() {
