@@ -1,6 +1,6 @@
 // Open the default tab
 document.getElementById("tab1").style.display = "block";
-document.getElementById("typeTab1").style.display = "block";
+// document.getElementById("typeTab1").style.display = "block";
 
 // Video source array
 const videoSrc = [
@@ -36,22 +36,24 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+
+
 // Function to open the subtab
-function openSubTab(evt, subtabName) {
+// function openSubTab(evt, subtabName) {
 
-    var subtabcontent = document.getElementsByClassName("subTabContent");
-    for (var i = 0; i < subtabcontent.length; i++) {
-        subtabcontent[i].style.display = "none";
-    }
+//     var subtabcontent = document.getElementsByClassName("subTabContent");
+//     for (var i = 0; i < subtabcontent.length; i++) {
+//         subtabcontent[i].style.display = "none";
+//     }
 
-    var subtablinks = document.getElementsByClassName("subTablinks");
-    for (var i = 0; i < subtablinks.length; i++) {
-        subtablinks[i].className = subtablinks[i].className.replace(" active", "");
-    }
+//     var subtablinks = document.getElementsByClassName("subTablinks");
+//     for (var i = 0; i < subtablinks.length; i++) {
+//         subtablinks[i].className = subtablinks[i].className.replace(" active", "");
+//     }
 
-    document.getElementById(subtabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
+//     document.getElementById(subtabName).style.display = "block";
+//     evt.currentTarget.className += " active";
+// }
 
 
 //for loading videos
@@ -84,9 +86,8 @@ function loadVideos() {
         videoCol.className = 'col';
         videoCol.innerHTML = `
         <div class="video">
-        <video height="100%"
-    width="100%" controls muted>
-          <source src=${videoSrc[videoIndex]} type="video/mp4" />
+        <video>
+          <source src=${videoSrc[videoIndex]} type="video/mp4"  />
         </video>
         <div class="overlay"></div>
       </div>
@@ -99,6 +100,34 @@ function loadVideos() {
 
 // Load initial videos
 loadVideos();
+
+document.querySelectorAll('.col').forEach((col) => {
+    const video = col.querySelector('video');
+    const videoUrl = video.querySelector('src ').getAttribute('src');
+    col.addEventListener('click', () => {
+      popupVideo(videoUrl);
+    });
+  });
+
+// PopupVideo
+function popupVideo(videoUrl){
+    // console.log(videoUrl);
+    // document.querySelectorAll('.col').forEach(vid => {
+    //     vid.addEventListener("click", () => {
+            // document.querySelector('.popupVideo').style.display = 'block';
+            // document.querySelector('.popupVideo video').src = vid.getAttribute(videoUrl);
+    //     })
+    // })
+    const popupVideo = document.querySelector('.popupVideo video');
+    popupVideo.src = videoUrl;
+    document.querySelector('.popupVideo').style.display = 'block';
+    
+}
+
+document.querySelector('.popupVideo span').addEventListener("click", () => {
+    document.querySelector('.popupVideo').style.display = 'none';
+})
+
 
 // Load more videos when load more button is clicked
 loadMore.addEventListener('click', () => {
