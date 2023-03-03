@@ -101,32 +101,32 @@ function loadVideos() {
 // Load initial videos
 loadVideos();
 
-document.querySelectorAll('.col').forEach((col) => {
-    const video = col.querySelector('video');
-    const videoUrl = video.querySelector('src ').getAttribute('src');
-    col.addEventListener('click', () => {
-      popupVideo(videoUrl);
-    });
-  });
+// document.querySelectorAll('.col').forEach((col) => {
+//     const video = col.querySelector('video');
+//     const videoUrl = video.querySelector('src ').getAttribute('src');
+//     col.addEventListener('click', () => {
+//       popupVideo(videoUrl);
+//     });
+//   });
 
 // PopupVideo
-function popupVideo(videoUrl){
-    // console.log(videoUrl);
-    // document.querySelectorAll('.col').forEach(vid => {
-    //     vid.addEventListener("click", () => {
-            // document.querySelector('.popupVideo').style.display = 'block';
-            // document.querySelector('.popupVideo video').src = vid.getAttribute(videoUrl);
-    //     })
-    // })
-    const popupVideo = document.querySelector('.popupVideo video');
-    popupVideo.src = videoUrl;
-    document.querySelector('.popupVideo').style.display = 'block';
+// function popupVideo(videoUrl){
+//     // console.log(videoUrl);
+//     // document.querySelectorAll('.col').forEach(vid => {
+//     //     vid.addEventListener("click", () => {
+//             // document.querySelector('.popupVideo').style.display = 'block';
+//             // document.querySelector('.popupVideo video').src = vid.getAttribute(videoUrl);
+//     //     })
+//     // })
+//     const popupVideo = document.querySelector('.popupVideo video');
+//     popupVideo.src = videoUrl;
+//     document.querySelector('.popupVideo').style.display = 'block';
     
-}
+// }
 
-document.querySelector('.popupVideo span').addEventListener("click", () => {
-    document.querySelector('.popupVideo').style.display = 'none';
-})
+// document.querySelector('.popupVideo span').addEventListener("click", () => {
+//     document.querySelector('.popupVideo').style.display = 'none';
+// })
 
 
 // Load more videos when load more button is clicked
