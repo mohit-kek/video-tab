@@ -63,6 +63,8 @@
 .tabcontentCenter {
   max-width: 1200px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .videosGrid {
@@ -84,7 +86,7 @@
 .video {
   height: 300px;
   width: 200px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .video > video {
@@ -110,14 +112,14 @@
   transform: translate(-50%, -50%);
   border: 3px solid #fff;
   object-fit: cover;
-  height: 40rem;
-  width: 30rem;
+  height: 35rem;
+  width: 25rem;
 }
 
 .popupVideo span {
   position: absolute;
   top: 5px;
-  right: 2px;
+  right: 10px;
   font-size: 50px;
   color: #fff;
   font-weight: bolder;
@@ -196,6 +198,11 @@
   .video {
     height: 350px;
     width: 300px;
+  }
+
+  .popupVideo > video {
+    height: 25rem;
+    width: 20rem;
   }
 
   .btnSmallDvc {

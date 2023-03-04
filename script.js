@@ -86,12 +86,14 @@ function loadVideos() {
         videoCol.className = 'col';
         videoCol.innerHTML = `
         <div class="video">
-        <video>
-          <source src=${videoSrc[videoIndex]} type="video/mp4"  />
+        <video src=${videoSrc[videoIndex]} type="video/mp4">
         </video>
         <div class="overlay"></div>
       </div>
         `;
+          videoCol.addEventListener("click", (event) => {
+            popupVideo(event.currentTarget.querySelector("video"));
+          });
         videosGrid.appendChild(videoCol);
         videoIndex++;
 
@@ -101,32 +103,17 @@ function loadVideos() {
 // Load initial videos
 loadVideos();
 
-// document.querySelectorAll('.col').forEach((col) => {
-//     const video = col.querySelector('video');
-//     const videoUrl = video.querySelector('src ').getAttribute('src');
-//     col.addEventListener('click', () => {
-//       popupVideo(videoUrl);
-//     });
-//   });
-
 // PopupVideo
-// function popupVideo(videoUrl){
-//     // console.log(videoUrl);
-//     // document.querySelectorAll('.col').forEach(vid => {
-//     //     vid.addEventListener("click", () => {
-//             // document.querySelector('.popupVideo').style.display = 'block';
-//             // document.querySelector('.popupVideo video').src = vid.getAttribute(videoUrl);
-//     //     })
-//     // })
-//     const popupVideo = document.querySelector('.popupVideo video');
-//     popupVideo.src = videoUrl;
-//     document.querySelector('.popupVideo').style.display = 'block';
-    
-// }
+function popupVideo(video) {
+    console.log(video)
+    document.querySelector('.popupVideo').style.display = "block";
+    document.querySelector('.popupVideo video').src = video.getAttribute('src');
 
-// document.querySelector('.popupVideo span').addEventListener("click", () => {
-//     document.querySelector('.popupVideo').style.display = 'none';
-// })
+// close popupVideo
+    document.querySelector('.popupVideo span').addEventListener("click", () => {
+        document.querySelector('.popupVideo').style.display = 'none';
+    })
+}
 
 
 // Load more videos when load more button is clicked
