@@ -91,9 +91,9 @@ function loadVideos() {
         <div class="overlay"></div>
       </div>
         `;
-          videoCol.addEventListener("click", (event) => {
+        videoCol.addEventListener("click", (event) => {
             popupVideo(event.currentTarget.querySelector("video"));
-          });
+        });
         videosGrid.appendChild(videoCol);
         videoIndex++;
 
@@ -105,11 +105,10 @@ loadVideos();
 
 // PopupVideo
 function popupVideo(video) {
-    console.log(video)
     document.querySelector('.popupVideo').style.display = "block";
     document.querySelector('.popupVideo video').src = video.getAttribute('src');
 
-// close popupVideo
+    // close popupVideo
     document.querySelector('.popupVideo span').addEventListener("click", () => {
         document.querySelector('.popupVideo').style.display = 'none';
     })
