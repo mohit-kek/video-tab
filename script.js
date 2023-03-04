@@ -62,9 +62,9 @@ let currentPage = 1;
 var videosPerLoad = 0;
 const updateVideosPerPage = () => {
     if (window.innerWidth < 600) {
-        videosPerLoad = 5;
+        videosPerLoad = 4;
     } else {
-        videosPerLoad = 10;
+        videosPerLoad = 8;
     }
 };
 
