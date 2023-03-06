@@ -58,7 +58,7 @@ function openTab(evt, tabName) {
 
 //for loading videos
 
-let currentPage = 1;
+var currentPage = 1;
 var videosPerLoad = 0;
 const updateVideosPerPage = () => {
     if (window.innerWidth < 600) {
@@ -78,25 +78,27 @@ const loadMore = document.querySelector('.loadMore');
 
 // load videos for the current page
 function loadVideos() {
-    const startIndex = videosPerLoad - currentPage;
+    const startIndex = currentPage * videosPerLoad - videosPerLoad;
     const endIndex = startIndex + videosPerLoad;
-    let videoIndex = 0;
     for (let i = startIndex; i < endIndex; i++) {
-        const videoCol = document.createElement('div');
-        videoCol.className = 'col';
-        videoCol.innerHTML = `
-        <div class="video">
-        <video src=${videoSrc[videoIndex]} type="video/mp4">
-        </video>
-        <div class="overlay"></div>
-      </div>
-        `;
-        videoCol.addEventListener("click", (event) => {
-            popupVideo(event.currentTarget.querySelector("video"));
-        });
-        videosGrid.appendChild(videoCol);
-        videoIndex++;
 
+        if (i < videoSrc.length) {
+
+            const videoCol = document.createElement('div');
+            videoCol.className = 'col';
+            videoCol.innerHTML = `
+            <div class="video">
+            <video src=${videoSrc[i]} type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+          </div>
+            `;
+            videoCol.addEventListener("click", (event) => {
+                popupVideo(event.currentTarget.querySelector("video"));
+            });
+            videosGrid.appendChild(videoCol);
+
+        }
     }
 }
 
@@ -121,7 +123,7 @@ loadMore.addEventListener('click', () => {
     loadVideos();
 
     // Hide load more button if all videos have been loaded
-    if (currentPage * videosPerLoad >= 40) {
+    if (currentPage * videosPerLoad >= videoSrc.length) {
         loadMore.style.display = 'none';
     }
 });
