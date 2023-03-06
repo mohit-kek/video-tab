@@ -60,14 +60,14 @@
   padding: 1.56rem 0;
 }
 
-.tabcontentCenter {
+.tabcontent-center {
   max-width: 1200px;
   margin: auto;
   display: flex;
   flex-direction: column;
 }
 
-.videosGrid {
+.videos-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -96,7 +96,7 @@
   object-fit: cover;
 }
 
-.popupVideo {
+.popup-video {
   position: fixed;
   top: 0;
   left: 0;
@@ -106,7 +106,7 @@
   display: none;
 }
 
-.popupVideo > video {
+.popup-video > video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -117,7 +117,7 @@
   width: 25rem;
 }
 
-.popupVideo span {
+.popup-video span {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -133,7 +133,7 @@
   margin-top: 1rem;
 }
 
-.loadMore {
+.load-more {
   background-color: var(--white-color);
   width: fit-content;
   color: var(--yellow-color);
@@ -150,7 +150,7 @@
   transform: translate(-50%, -50%);
 }
 
-.seeReviews {
+.see-reviews {
   background-color: var(--white-color);
   color: var(--light-brown-color);
   width: max-content;
@@ -165,7 +165,7 @@
   bottom: 0;
 }
 
-.seeReviews:active {
+.see-reviews:active {
   color: var(--brown-color);
 }
 
@@ -178,10 +178,6 @@
 
   .btn {
     justify-content: space-evenly;
-  }
-
-  .seeReviewsBtnPos {
-    right: 6%;
   }
 }
 
@@ -201,13 +197,9 @@
     width: 300px;
   }
 
-  .popupVideo > video {
+  .popup-video > video {
     height: 25rem;
     width: 20rem;
-  }
-
-  .btnSmallDvc {
-    display: none;
   }
 
   .btn {
@@ -217,14 +209,14 @@
     width: 300px;
   }
 
-  .loadMore {
+  .load-more {
     position: inherit;
     top: 0;
     left: 0;
     transform: none;
   }
 
-  .seeReviews {
+  .see-reviews {
     position: inherit;
     right: 0;
     bottom: 0;

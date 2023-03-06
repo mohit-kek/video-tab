@@ -73,8 +73,8 @@ updateVideosPerPage();
 // Update on resize
 window.addEventListener('resize', updateVideosPerPage);
 
-const videosGrid = document.querySelector('.videosGrid');
-const loadMore = document.querySelector('.loadMore');
+const videosGrid = document.querySelector('.videos-grid');
+const loadMore = document.querySelector('.load-more');
 
 // load videos for the current page
 function loadVideos() {
@@ -107,12 +107,12 @@ loadVideos();
 
 // PopupVideo
 function popupVideo(video) {
-    document.querySelector('.popupVideo').style.display = "block";
-    document.querySelector('.popupVideo video').src = video.getAttribute('src');
+    document.querySelector('.popup-video').style.display = "block";
+    document.querySelector('.popup-video video').src = video.getAttribute('src');
 
     // close popupVideo
-    document.querySelector('.popupVideo span').addEventListener("click", () => {
-        document.querySelector('.popupVideo').style.display = 'none';
+    document.querySelector('.popup-video span').addEventListener("click", () => {
+        document.querySelector('.popup-video').style.display = 'none';
     })
 }
 
