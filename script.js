@@ -1,7 +1,3 @@
-// Open the default tab
-document.getElementById("tab1").style.display = "block";
-// document.getElementById("typeTab1").style.display = "block";
-
 // Video source array
 const videoSrc = [
     "./assets/Video1.mp4",
@@ -16,6 +12,8 @@ const videoSrc = [
     "./assets/Video10.mp4",
 ]
 
+// Open the default tab
+document.getElementById("tab1").style.display = "block";
 
 // Function to open the tab
 function openTab(evt, tabName) {
@@ -36,35 +34,13 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-
-
-// Function to open the subtab
-// function openSubTab(evt, subtabName) {
-
-//     var subtabcontent = document.getElementsByClassName("subTabContent");
-//     for (var i = 0; i < subtabcontent.length; i++) {
-//         subtabcontent[i].style.display = "none";
-//     }
-
-//     var subtablinks = document.getElementsByClassName("subTablinks");
-//     for (var i = 0; i < subtablinks.length; i++) {
-//         subtablinks[i].className = subtablinks[i].className.replace(" active", "");
-//     }
-
-//     document.getElementById(subtabName).style.display = "block";
-//     evt.currentTarget.className += " active";
-// }
-
-
 //for loading videos
 
 var currentPage = 1;
-var videosPerLoad = 0;
+var videosPerLoad = 8;
 const updateVideosPerPage = () => {
     if (window.innerWidth < 600) {
         videosPerLoad = 4;
-    } else {
-        videosPerLoad = 8;
     }
 };
 
@@ -90,9 +66,13 @@ function loadVideos() {
             <div class="video">
             <video src=${videoSrc[i]} type="video/mp4">
             </video>
-            <div class="overlay"></div>
-          </div>
+            
+            </div>
+            <div class="play-container">
+            <i class='bx bx-play-circle'></i>
+            </div>
             `;
+        
             videoCol.addEventListener("click", (event) => {
                 popupVideo(event.currentTarget.querySelector("video"));
             });
@@ -105,15 +85,26 @@ function loadVideos() {
 // Load initial videos
 loadVideos();
 
+function closePopupVideo() {
+    document.querySelector('.popup-video').style.display = 'none';
+}
+
+var popup = document.querySelector(".popup-video");
+
 // PopupVideo
 function popupVideo(video) {
-    document.querySelector('.popup-video').style.display = "block";
+    document.querySelector('.popup-video').style.display = "flex";
     document.querySelector('.popup-video video').src = video.getAttribute('src');
 
     // close popupVideo
-    document.querySelector('.popup-video span').addEventListener("click", () => {
-        document.querySelector('.popup-video').style.display = 'none';
-    })
+    document.querySelector('.popup-video span').addEventListener("click", closePopupVideo)
+
+
+    window.addEventListener("click", function (e) {
+        if (e.target === popup) {
+            closePopupVideo();
+        }
+    });
 }
 
 

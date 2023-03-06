@@ -26,7 +26,7 @@
 }
 
 .tab {
-  padding: 0 11.5rem;
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
 }
@@ -71,23 +71,24 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.row {
-  display: flex;
-  flex: auto;
-  margin-bottom: 20px;
+  gap: 2.5rem;
 }
 
 .col {
-  margin: 14px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-container {
+  position: absolute;
+  font-size: 3rem;
+  color: white;
 }
 
 .video {
   height: 300px;
   width: 250px;
-  object-fit: contain;
 }
 
 .video > video {
@@ -100,37 +101,42 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: #000000b3;
   height: 100%;
   width: 100%;
   display: none;
+  justify-content: center;
+  align-items: center;
 }
 
-.popup-video > video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.popup-video > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.popup-video > div > video {
   border: 3px solid #fff;
   object-fit: cover;
-  height: 35rem;
+  max-height: 38rem;
   width: 25rem;
 }
 
-.popup-video span {
-  position: absolute;
-  top: 5px;
-  right: 10px;
+.popup-video > div > span {
+  position: relative;
+  top: -1rem;
   font-size: 50px;
   color: #fff;
   font-weight: bolder;
-  z-index: 100;
   cursor: pointer;
 }
 
 .btn {
   position: relative;
-  margin-top: 1rem;
+  margin-top: 2rem;
+}
+
+.col > i {
+  position: fixed;
 }
 
 .load-more {
@@ -142,7 +148,7 @@
   text-decoration: underline;
   text-underline-offset: 5px;
   border: none;
-  font-weight: 700;
+  font-weight: bolder;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -173,7 +179,8 @@
 
 @media screen and (max-width: 1024px) {
   .tab {
-    padding: auto;
+    /* padding: auto; */
+    margin-right: 2rem;
   }
 
   .btn {
@@ -197,8 +204,8 @@
     width: 300px;
   }
 
-  .popup-video > video {
-    height: 25rem;
+  .popup-video > div > video {
+    height: 30rem;
     width: 20rem;
   }
 
