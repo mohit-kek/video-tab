@@ -61,7 +61,7 @@
 }
 
 .tabcontent-center {
-  max-width: 1200px;
+  max-width: 80%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -87,8 +87,8 @@
 }
 
 .video {
-  height: 300px;
-  width: 250px;
+  height: 250px;
+  width: 200px;
 }
 
 .video > video {
@@ -128,14 +128,6 @@
   color: #fff;
   font-weight: bolder;
   cursor: pointer;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-}
-
-.popup-video > div > span:hover {
-  color: rgb(155, 151, 151);
-  scale: 1.2;
 }
 
 .btn {
