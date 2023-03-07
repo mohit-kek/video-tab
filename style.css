@@ -111,7 +111,6 @@
 
 .popup-video > div {
   display: flex;
-  gap: 1rem;
 }
 
 .popup-video > div > video {
@@ -123,8 +122,8 @@
 
 .popup-video > div > span {
   position: relative;
-  top: -1rem;
-  font-size: 50px;
+  top: -6px;
+  font-size: 40px;
   color: #fff;
   font-weight: bolder;
   cursor: pointer;
@@ -135,7 +134,7 @@
 
 .popup-video > div > span:hover {
   color: rgb(155, 151, 151);
-  scale: 1.2;
+  scale: 1.1;
 }
 
 .btn {

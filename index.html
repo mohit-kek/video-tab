@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap"
       rel="stylesheet"
     />
-
+    <!-- icon-cdn -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- css file -->
@@ -23,22 +23,25 @@
   </head>
   <body>
     <div class="main">
+      <!-- tab-bar -->
       <div class="tab">
+        <!-- Video review tab button -->
         <button class="tablinks active" onclick="openTab(event, 'tab1')">
           Video Reviews
         </button>
+        <!-- Written review tab button -->
         <button class="tablinks" onclick="openTab(event, 'tab2')">
           Written Reviews
         </button>
       </div>
-
+      <!-- Video Review Tab Content -->
       <div id="tab1" class="tabcontent">
         <div class="tabcontent-center">
           <div class="videos-grid">
             <!-- <div class="row"> -->
               <!-- <div class="col">
                   <div>
-                    <video height="300px" width="250px" onclick="popupVideo(url)"   muted>
+                    <video type="video/mp4">
                       <source src="./assets/sample.mp4" type="video/mp4" />
                     </video>
                   </div>
@@ -49,17 +52,20 @@
             <button class="load-more" ">Load more</button>
             <button class="see-reviews">See All Reviews</button>
           </div>
+          <!-- Popup Video -->
           <div class="popup-video">
             <div>
               <video src="./assets/sample.mp4" muted autoplay controls></video>
-              <span>&times; </span>
+              <span>
+                <i class='bx bx-x-circle'></i>
+              </span>
             </div>
           </div>
         </div>
       </div>
 
 
-      <!-- Written Review Tab -->
+      <!-- Written Review Tab Content -->
       <div id="tab2" class="tabcontent">
         <div>
           <h3>Written Review Section</h3>

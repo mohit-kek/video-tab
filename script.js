@@ -42,6 +42,8 @@ const updateVideosPerPage = () => {
     if (window.innerWidth < 600) {
         videosPerLoad = 4;
     }
+
+    return videosPerLoad    
 };
 
 updateVideosPerPage();
