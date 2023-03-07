@@ -4,16 +4,8 @@
   box-sizing: border-box;
 }
 
-/* :root {
-  --primary-color: #86bb49;
-  --primary-font-color: black;
-  --secondary-font-color: #edf838;
-  --yellow-color: #edf838;
-  --white-color: white;
-} */
-
 :root {
-  --primary-color: #f8f4ee;
+  --primary-color: #e4dad3;
   --primary-font-color: #bca79c;
   --secondary-font-color: #5a3b36;
   --white-color: #ffffff;
@@ -25,14 +17,13 @@
   height: 100vh;
 }
 
-.tab {
-  max-width: 1200px;
+.tab-container {
+  max-width: 1200px;  
   display: flex;
   flex-direction: row;
-    
 }
 
-.tab > button {
+.tab-container > button {
   background-color: var(--primary-color);
   color: var(--primary-font-color);
   border: none;
@@ -44,9 +35,10 @@
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
+  transition: 300ms;
 }
 
-.tab button.active {
+.tab-container button.active {
   background-color: var(--white-color);
   color: var(--secondary-font-color);
   text-decoration: none;
@@ -73,7 +65,6 @@
   justify-content: center;
   flex-wrap: wrap; 
   gap: 2.5rem;
-  
 }
 
 .col {
@@ -188,8 +179,7 @@
 /* Medium devices */
 
 @media screen and (max-width: 1024px) {
-  .tab {
-    /* padding: auto; */
+  .tab-container {
     margin-right: 2rem;
   }
 
@@ -201,11 +191,10 @@
 /* Small devices */
 
 @media screen and (max-width: 600px) {
-  .tab {
+  .tab-container{
     padding: 0;
   }
-
-  .tab > button {
+  .tab-container > button {
     width: 170px;
   }
 

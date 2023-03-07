@@ -89,6 +89,9 @@ loadVideos();
 
 function closePopupVideo() {
     document.querySelector('.popup-video').style.display = 'none';
+    const video = document.querySelector(".popup-video video");
+    video.pause();
+    
 }
 
 var popup = document.querySelector(".popup-video");
