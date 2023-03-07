@@ -1,4 +1,4 @@
-// Video source array
+// Video sources
 const videoSrc = [
     "./assets/Video1.mp4",
     "./assets/Video2.mp4",
