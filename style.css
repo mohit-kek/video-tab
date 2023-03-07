@@ -70,7 +70,7 @@
 .videos-grid {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
   gap: 2.5rem;
 }
 
@@ -130,6 +130,7 @@
   height: 50px;
   width: 50px;
   text-align: center;
+  transition: 100ms ;
 }
 
 .popup-video > div > span:hover {
