@@ -19,10 +19,11 @@
 }
 
 .tab-container {
-  max-width: 1120px;  
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
+  position: sticky;
 }
 
 .tab-container > button {
@@ -64,8 +65,8 @@
 
 .videos-grid {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap; 
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 2.5rem;
 }
 
@@ -113,6 +114,7 @@
   object-fit: cover;
   max-height: 38rem;
   width: 25rem;
+  margin: 5px;
 }
 
 .popup-video > div > span {
@@ -135,7 +137,7 @@
 
 .btn {
   position: relative;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .col > i {
@@ -170,7 +172,7 @@
   cursor: pointer;
   border: none;
   position: absolute;
-  right: 35px;
+  right: 0;
   bottom: 0;
 }
 
@@ -181,7 +183,8 @@
 /* Medium devices */
 
 @media screen and (max-width: 1024px) {
-  .tab-container {
+  .tab-container,
+  .tabcontent-center {
     margin: 0 2rem;
   }
 
@@ -193,11 +196,17 @@
 /* Small devices */
 
 @media screen and (max-width: 600px) {
-  .tab-container{
+  .tab-container {
+    max-width: 19rem;
     padding: 0;
+    margin: 0 auto;
   }
   .tab-container > button {
     width: 170px;
+  }
+
+  .videos-grid {
+    justify-content: center;
   }
 
   .video {
@@ -224,9 +233,9 @@
     transform: none;
   }
 
-  .see-reviews {
-    position: inherit;
-    right: 0;
-    bottom: 0;
-  }
+    /* .see-reviews {
+      position: inherit;
+      right: 0;
+      bottom: 0;
+    } */
 }

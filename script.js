@@ -10,6 +10,7 @@ const videoSrc = [
     "./assets/Video8.mp4",
     "./assets/Video9.mp4",
     "./assets/Video10.mp4",
+    "./assets/Video11.mp4",
 ]
 
 // Open the default tab
