@@ -14,13 +14,15 @@
 .main {
   background-color: var(--primary-color);
   width: 100%;
-  height: 100vh;padding-top: 20px;
+  height: 100vh;
+  padding-top: 20px;
 }
 
 .tab-container {
-  max-width: 1200px;  
+  max-width: 1120px;  
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
 }
 
 .tab-container > button {
@@ -180,7 +182,7 @@
 
 @media screen and (max-width: 1024px) {
   .tab-container {
-    margin-right: 2rem;
+    margin: 0 2rem;
   }
 
   .btn {
