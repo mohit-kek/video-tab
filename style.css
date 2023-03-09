@@ -117,7 +117,7 @@
   max-height: 38rem;
   width: 25rem;
   margin: 10px;
-  margin-left: 4rem;
+  margin-left: 3.8rem;
 }
 
 .popup-video > div > span {
@@ -232,7 +232,7 @@
 
   .popup-video > div > span {
     top: -2rem;
-    right: 1rem;
+    right: 2.8rem;
   }
 
   .btn {
