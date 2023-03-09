@@ -64,7 +64,7 @@
 
 .videos-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
   column-gap: 10px;
   row-gap: 30px;
@@ -116,7 +116,7 @@
   object-fit: cover;
   max-height: 38rem;
   width: 25rem;
-  margin: 5px;
+  margin: 10px;
 }
 
 .popup-video > div > span {
@@ -193,6 +193,11 @@
     margin: 0 0.9rem;
   }
 
+  .videos-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
   .video {
     height: 15rem;
   }
@@ -210,7 +215,7 @@
   }
 
   .videos-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
 
@@ -221,6 +226,13 @@
   .popup-video > div > video {
     height: 30rem;
     width: 20rem;
+    margin: auto;
+  }
+
+  .popup-video > div > span {
+    position: absolute;
+    top: 3rem;
+    right: 4%;
   }
 
   .btn {

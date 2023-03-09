@@ -1,4 +1,5 @@
-// Video sources
+// Video sources 
+// Put the Video loacation or urls in this array 
 const videoSrc = [
     "./assets/Video1.mp4",
     "./assets/Video2.mp4",
@@ -35,23 +36,25 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-//for loading videos
-
-// const updateVideosPerPage = () => {
-//     if (window.innerWidth < 600) {
-//         videosPerLoad = 4;
-//     }
-
-//     return videosPerLoad    
-// };
-
-// updateVideosPerPage();
-
-// // Update on resize
-// window.addEventListener('resize', updateVideosPerPage);
-
+// for loading videos
 var currentPage = 1; //Initial load
-var videosPerLoad = 8; //number of video per load
+var videosPerLoad = 10; //number of video per load
+const updateVideosPerPage = () => {
+
+    if (window.innerWidth <= 1024 && window.innerWidth > 600) {
+        videosPerLoad = 8;
+    } else if (window.innerWidth <= 600) {
+        videosPerLoad = 4;
+    }
+
+    return videosPerLoad
+};
+
+updateVideosPerPage();
+
+// Update on resize
+window.addEventListener('resize', updateVideosPerPage);
+
 const videosGrid = document.querySelector('.videos-grid');
 const loadMore = document.querySelector('.load-more');
 
