@@ -37,21 +37,21 @@ function openTab(evt, tabName) {
 
 //for loading videos
 
-var currentPage = 1;
-var videosPerLoad = 8;
-const updateVideosPerPage = () => {
-    if (window.innerWidth < 600) {
-        videosPerLoad = 4;
-    }
+// const updateVideosPerPage = () => {
+//     if (window.innerWidth < 600) {
+//         videosPerLoad = 4;
+//     }
 
-    return videosPerLoad    
-};
+//     return videosPerLoad    
+// };
 
-updateVideosPerPage();
+// updateVideosPerPage();
 
-// Update on resize
-window.addEventListener('resize', updateVideosPerPage);
+// // Update on resize
+// window.addEventListener('resize', updateVideosPerPage);
 
+var currentPage = 1; //Initial load
+var videosPerLoad = 8; //number of video per load
 const videosGrid = document.querySelector('.videos-grid');
 const loadMore = document.querySelector('.load-more');
 
@@ -69,13 +69,12 @@ function loadVideos() {
             <div class="video">
             <video src=${videoSrc[i]} type="video/mp4">
             </video>
-            
             </div>
             <div class="play-container">
             <i class='bx bx-play-circle'></i>
             </div>
             `;
-        
+
             videoCol.addEventListener("click", (event) => {
                 popupVideo(event.currentTarget.querySelector("video"));
             });
@@ -92,7 +91,7 @@ function closePopupVideo() {
     document.querySelector('.popup-video').style.display = 'none';
     const video = document.querySelector(".popup-video video");
     video.pause();
-    
+
 }
 
 var popup = document.querySelector(".popup-video");

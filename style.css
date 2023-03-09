@@ -19,11 +19,10 @@
 }
 
 .tab-container {
-  max-width: 1200px;
+  max-width: 1170px;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  position: sticky;
 }
 
 .tab-container > button {
@@ -64,10 +63,11 @@
 }
 
 .videos-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 10px;
+  row-gap: 30px;
 }
 
 .col {
@@ -84,8 +84,8 @@
 }
 
 .video {
-  height: 300px;
-  width: 250px;
+  height: 18rem;
+  width: 90%;
   cursor: pointer;
 }
 
@@ -138,8 +138,9 @@
 }
 
 .btn {
-  position: relative;
-  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2rem 0.4rem 0 0.4rem;
 }
 
 .col > i {
@@ -157,10 +158,10 @@
   border: none;
   font-weight: bolder;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: center;
+  align-self: center;
 }
 
 .see-reviews {
@@ -173,9 +174,8 @@
   font-weight: bold;
   cursor: pointer;
   border: none;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  justify-self: end;
+  align-self: center;
 }
 
 .see-reviews:active {
@@ -185,13 +185,16 @@
 /* Medium devices */
 
 @media screen and (max-width: 1024px) {
-  .tab-container,
-  .tabcontent-center {
-    margin: 0 2rem;
+  .tab-container {
+    margin: 0 1.2rem;
   }
 
-  .btn {
-    justify-content: space-evenly;
+  .tabcontent-center {
+    margin: 0 0.9rem;
+  }
+
+  .video {
+    height: 15rem;
   }
 }
 
@@ -199,21 +202,20 @@
 
 @media screen and (max-width: 600px) {
   .tab-container {
-    max-width: 19rem;
     padding: 0;
-    margin: 0 auto;
+    margin: 0 1.4rem;
   }
   .tab-container > button {
     width: 170px;
   }
 
   .videos-grid {
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 
   .video {
-    height: 350px;
-    width: 300px;
+    height: 12rem;
   }
 
   .popup-video > div > video {
@@ -222,22 +224,12 @@
   }
 
   .btn {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    width: 300px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .load-more {
-    position: inherit;
-    top: 0;
-    left: 0;
-    transform: none;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: start;
   }
-
-    /* .see-reviews {
-      position: inherit;
-      right: 0;
-      bottom: 0;
-    } */
 }
