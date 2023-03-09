@@ -120,6 +120,6 @@ loadMore.addEventListener('click', () => {
 
     // Hide load more button if all videos have been loaded
     if (currentPage * videosPerLoad >= videoSrc.length) {
-        loadMore.style.display = 'none';
+        loadMore.style.visibility = 'hidden';
     }
 });
